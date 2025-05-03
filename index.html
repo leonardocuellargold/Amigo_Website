@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <title>Amigo - Never Go Solo</title>
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -21,6 +23,10 @@
       color: var(--text-dark);
       background-color: var(--soft-white);
     }
+	  .iconHover:hover{
+		transform: scale(1.06);
+        transition: transform .3s;
+	}
     .navbar {
       background-color: #fff;
     }
@@ -60,6 +66,20 @@
       animation: fadeInDown 1s ease-out forwards;
       opacity: 0;
     }
+	  
+	  .hr-gradient {
+  border: 0;
+  height: 5px;
+  background: linear-gradient(135deg, var(--primary-orange) 10%, var(--secondary-blue) 100%);
+  margin: 4rem auto;
+  width: 80%;
+  border-radius: 2px;
+}
+	  
+	  .blueHover:hover{
+		  background-color:lightblue;
+		  
+	  }
     .hero p {
       font-size: 1.25rem;
       margin-bottom: 2rem;
@@ -122,18 +142,45 @@
       opacity: 1;
       transform: translateY(0);
     }
+	
+	.zoom:hover{
+		 transform: scale(1.06);
+        transition: transform .3s;
+	  }
     /* Footer */
     footer {
       background-color: var(--soft-white);
       padding: 2rem 0;
     }
+	  
+	  .icon:hover{
+		  transform: scale(1.06);
+        transition: transform .3s;
+	  }
+	  
+	  .bi-heart:hover{
+		 color: #4FC3F7;
+		 transform: scale(1.06);
+        transition: transform .3s;
+	  }
+	  
+	  .bi-geo-alt:hover{
+		  color: #4FC3F7;
+		  transform: scale(1.06);
+        transition: transform .3s;
+	  }
+	  
+	  .bi-people:hover{
+		  color: #4FC3F7;
+	  }
+	  
   </style>
 </head>
 <body>
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-light fixed-top shadow-sm">
     <div class="container">
-      <a class="navbar-brand" href="#">Amigo</a>
+      <!--<a class="navbar-brand" href="#">Amigo</a>--> <img src="amigologo.jpg" width="120px">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -151,11 +198,11 @@
     <div class="container">
       <h1 class="mb-3">Your next <span class="handwrite">Amigo</span> is waiting</h1>
       <p>Discover events near you. Make friends through friends of friends. Never go solo again.</p>
-      <a href="#download" class="btn btn-lg btn-light mx-2">Download on App Store</a>
-      <a href="#download" class="btn btn-lg btn-blue mx-2">Get it on Google Play</a>
+      <a href="#download" class="btn btn-lg btn-light mx-2">Coming Soon to the App Store</a>
+      <a href="#download" class="btn btn-lg btn-blue mx-2">Comming Soon to Google Play</a>
     </div>
   </header>
-  <!-- Mockup Section -->
+  <!-- Mockup Section
   <section id="mockup" class="container py-5 text-center">
     <h2 class="mb-4 reveal">Experience Amigo in Action</h2>
     <p class="lead reveal">Check out the app mockup below and see how easily you can discover events and connect with amigos.</p>
@@ -164,24 +211,25 @@
   <!-- Features Section -->
   <section id="features" class="container feature text-center">
     <div class="row">
-      <div class="col-md-4 reveal">
+      <div class="col-md-4 reveal zoom">
         <i class="bi bi-geo-alt icon"></i>
         <h3>Discover Nearby Events</h3>
         <p>Uncover meetups, concerts, sports games, and more—all happening just around the corner.</p>
       </div>
-      <div class="col-md-4 reveal">
+      <div class="col-md-4 reveal zoom">
         <i class="bi bi-people icon"></i>
         <h3>Connect with Friends of Friends</h3>
         <p>Leverage your social circle to make genuine connections. Your network, now social.</p>
       </div>
-      <div class="col-md-4 reveal">
+      <div class="col-md-4 reveal zoom">
         <i class="bi bi-heart icon"></i>
         <h3>Never Go Solo</h3>
         <p>Find an <em>Amigo</em> for every adventure. Always have company, always have fun.</p>
       </div>
     </div>
   </section>
-  <!-- Testimonials Section -->
+<hr class="hr-gradient">
+<!-- Testimonials Section -->
   <section id="testimonials" class="bg-light py-5">
     <div class="container text-center">
       <h2 class="mb-4 reveal">What Our Amigos Say</h2>
