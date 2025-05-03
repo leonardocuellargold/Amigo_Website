@@ -1,0 +1,34 @@
+name: Deploy to GCS
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Checkout your repo
+      - uses: actions/checkout@v3
+
+      # 2. Authenticate to GCP
+      - name: Authenticate to GCP
+        uses: google-github-actions/auth@v1
+        with:
+          credentials_json: "${{ secrets.GCP_SA_KEY }}"
+
+      # 3. Install & configure gcloud
+      - name: Set up gcloud
+        uses: google-github-actions/setup-gcloud@v1
+        with:
+          project_id: ${{ secrets.GCP_PROJECT_ID }}
+          export_default_credentials: true
+
+      # 4. Sync only your site assets
+      - name: Sync to GCS (excluding non-site files)
+        run: |
+          gsutil -m rsync -r \
+            -x "(\.git.*|\.github/.*|.*\.(md|yml|yaml))" \
+            ./ gs://${{ secrets.GCP_BUCKET }}
+          gsutil web set -m index.html -e 404.html gs://${{ secrets.GCP_BUCKET }}
