@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Amigo - Never Go Solo</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-orange: #ff6a00;
+      --primary-orange-light: #ffa94d;
+      --text-dark: #333;
+    }
+    body {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      color: var(--text-dark);
+    }
+    .navbar {
+      background-color: #fff;
+    }
+    .navbar-brand {
+      font-weight: bold;
+      font-size: 1.5rem;
+      color: var(--primary-orange) !important;
+    }
+    .btn-orange {
+      background-color: var(--primary-orange);
+      color: #fff;
+      transition: background-color 0.3s;
+    }
+    .btn-orange:hover {
+      background-color: var(--primary-orange-light);
+    }
+    .text-orange { color: var(--primary-orange); }
+    /* Hero */
+    .hero {
+      background: linear-gradient(135deg, var(--primary-orange) 0%, #ff8f1a 100%);
+      color: #fff;
+      height: 100vh;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: bold;
+      animation: fadeInDown 1s ease-out forwards;
+      opacity: 0;
+    }
+    .hero p {
+      font-size: 1.25rem;
+      margin-bottom: 2rem;
+      animation: fadeInUp 1s ease-out forwards;
+      animation-delay: 0.5s;
+      opacity: 0;
+    }
+    @keyframes fadeInDown {
+      from { transform: translateY(-30px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    @keyframes fadeInUp {
+      from { transform: translateY(30px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    /* Handwriting Animation */
+    .handwrite {
+      font-family: 'Dancing Script', cursive;
+      font-size: 3rem;
+      color: #fff;
+      white-space: nowrap;
+      overflow: hidden;
+      display: inline-block;
+      width: 0;
+      animation: handwrite 2s ease-out forwards;
+    }
+    @keyframes handwrite {
+      from { width: 0; }
+      to { width: calc(1ch * 5); } /* "Amigo" is 5 letters */
+    }
+    .feature {
+      margin-top: 4rem;
+      margin-bottom: 4rem;
+    }
+    .feature .icon {
+      font-size: 3rem;
+      color: var(--primary-orange);
+      margin-bottom: 1rem;
+    }
+    /* Reveal Animation */
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.8s ease-out;
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    /* Footer */
+    footer {
+      background-color: #f8f9fa;
+      padding: 2rem 0;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top shadow-sm">
+    <div class="container">
+      <a class="navbar-brand" href="#">Amigo</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
+          <li class="nav-item"><a class="nav-link" href="#download">Download</a></li>
+        </ul>
+        <a href="#download" class="btn btn-orange ms-lg-3">Get the App</a>
+      </div>
+    </div>
+  </nav>
+  <!-- Hero Section -->
+  <header class="hero d-flex align-items-center text-center text-white">
+    <div class="container">
+      <h1 class="mb-3">Your next <span class="handwrite">Amigo</span> is waiting</h1>
+      <p>Discover events near you. Make friends through friends of friends. Never go solo again.</p>
+      <a href="#download" class="btn btn-lg btn-light mx-2">Download on App Store</a>
+      <a href="#download" class="btn btn-lg btn-orange mx-2">Get it on Google Play</a>
+    </div>
+  </header>
+  <!-- Mockup Section -->
+  <section id="mockup" class="container py-5 text-center">
+    <h2 class="mb-4 reveal">Experience Amigo in Action</h2>
+    <p class="lead reveal">Check out the app mockup below and see how easily you can discover events and connect with amigos.</p>
+    <img src="path/to/mockup.png" alt="App Mockup" class="img-fluid reveal" style="max-width: 400px;">
+  </section>
+  <!-- Features Section -->
+  <section id="features" class="container feature text-center">
+    <div class="row">
+      <div class="col-md-4 reveal">
+        <i class="bi bi-geo-alt icon"></i>
+        <h3>Discover Nearby Events</h3>
+        <p>Uncover meetups, concerts, sports games, and more—all happening just around the corner.</p>
+      </div>
+      <div class="col-md-4 reveal">
+        <i class="bi bi-people icon"></i>
+        <h3>Connect with Friends of Friends</h3>
+        <p>Leverage your social circle to make genuine connections. Your network, now social.</p>
+      </div>
+      <div class="col-md-4 reveal">
+        <i class="bi bi-heart icon"></i>
+        <h3>Never Go Solo</h3>
+        <p>Find an <em>Amigo</em> for every adventure. Always have company, always have fun.</p>
+      </div>
+    </div>
+  </section>
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="bg-light py-5">
+    <div class="container text-center">
+      <h2 class="mb-4 reveal">What Our Amigos Say</h2>
+      <div class="row">
+        <div class="col-md-4 reveal">
+          <blockquote class="blockquote">
+            <p>"Since using Amigo, I never miss out on fun events, and I’ve met incredible people through mutual friends!"</p>
+            <footer class="blockquote-footer">Alex, 24</footer>
+          </blockquote>
+        </div>
+        <div class="col-md-4 reveal">
+          <blockquote class="blockquote">
+            <p>"The friends-of-friends feature is amazing—I've made genuine connections I had nothing in common with at first!"</p>
+            <footer class="blockquote-footer">Priya, 29</footer>
+          </blockquote>
+        </div>
+        <div class="col-md-4 reveal">
+          <blockquote class="blockquote">
+            <p>"Love the simple UI and real-time event discovery. Amigo keeps my social calendar full!"</p>
+            <footer class="blockquote-footer">Javier, 31</footer>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Download CTA -->
+  <section id="download" class="text-center py-5 bg-white">
+    <div class="container">
+      <h2 class="reveal">Ready to find your <span class="text-orange">Amigo</span>?</h2>
+      <p class="reveal">Download now and start exploring!</p>
+      <a href="#" class="btn btn-orange btn-lg mx-2 reveal">Get the App</a>
+    </div>
+  </section>
+  <!-- Footer -->
+  <footer class="text-center">
+    <div class="container">
+      <p>&copy; 2025 Amigo. All rights reserved.</p>
+      <div>
+        <a href="#" class="text-reset mx-2">Privacy Policy</a>
+        <a href="#" class="text-reset mx-2">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+  <!-- Bootstrap JS and dependencies -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Reveal on scroll
+    const reveals = document.querySelectorAll('.reveal');
+    const options = { threshold: 0.2 };
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, options);
+    reveals.forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
