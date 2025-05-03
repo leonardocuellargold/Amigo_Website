@@ -11,13 +11,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary-orange: #ff6a00;
-      --primary-orange-light: #ffa94d;
-      --text-dark: #333;
+      --primary-orange: #FF6A00;
+      --secondary-blue: #4FC3F7;
+      --soft-white: #FAFAFA;
+      --text-dark: #333333;
     }
     body {
       font-family: 'Helvetica Neue', Arial, sans-serif;
       color: var(--text-dark);
+      background-color: var(--soft-white);
     }
     .navbar {
       background-color: #fff;
@@ -35,10 +37,18 @@
     .btn-orange:hover {
       background-color: var(--primary-orange-light);
     }
+    .btn-blue {
+      background-color: var(--secondary-blue);
+      color: #fff;
+      transition: background-color 0.3s;
+    }
+    .btn-blue:hover {
+      background-color: #76DBF2;
+    }
     .text-orange { color: var(--primary-orange); }
     /* Hero */
     .hero {
-      background: linear-gradient(135deg, var(--primary-orange) 0%, #ff8f1a 100%);
+      background: linear-gradient(135deg, var(--primary-orange) 0%, var(--secondary-blue) 100%);
       color: #fff;
       height: 100vh;
       position: relative;
@@ -80,6 +90,19 @@
       from { width: 0; }
       to { width: calc(1ch * 5); } /* "Amigo" is 5 letters */
     }
+    /* Section Heading Accent */
+    h2 {
+      position: relative;
+    }
+    h2::after {
+      content: '';
+      width: 50px;
+      height: 4px;
+      background: var(--secondary-blue);
+      display: block;
+      margin: 0.5rem auto 0;
+      border-radius: 2px;
+    }
     .feature {
       margin-top: 4rem;
       margin-bottom: 4rem;
@@ -101,7 +124,7 @@
     }
     /* Footer */
     footer {
-      background-color: #f8f9fa;
+      background-color: var(--soft-white);
       padding: 2rem 0;
     }
   </style>
@@ -129,7 +152,7 @@
       <h1 class="mb-3">Your next <span class="handwrite">Amigo</span> is waiting</h1>
       <p>Discover events near you. Make friends through friends of friends. Never go solo again.</p>
       <a href="#download" class="btn btn-lg btn-light mx-2">Download on App Store</a>
-      <a href="#download" class="btn btn-lg btn-orange mx-2">Get it on Google Play</a>
+      <a href="#download" class="btn btn-lg btn-blue mx-2">Get it on Google Play</a>
     </div>
   </header>
   <!-- Mockup Section -->
