@@ -41,7 +41,8 @@
       transition: background-color 0.3s;
     }
     .btn-orange:hover {
-      background-color: var(--primary-orange-light);
+      background-color: #ff6a00;
+		color: white;
     }
     .btn-blue {
       background-color: var(--secondary-blue);
@@ -98,10 +99,10 @@
     /* Handwriting Animation */
     .handwrite {
       font-family: 'Dancing Script', cursive;
-      font-size: 3rem;
+      font-size: 3.5rem;
       color: #fff;
-      white-space: nowrap;
-      overflow: hidden;
+      /*white-space: nowrap;*/
+      /*overflow: hidden;*/
       display: inline-block;
       width: 0;
       animation: handwrite 2s ease-out forwards;
@@ -123,6 +124,9 @@
       margin: 0.5rem auto 0;
       border-radius: 2px;
     }
+	  buttonOrange:hover{
+	  background-color:#ff6a00;
+	  }
     .feature {
       margin-top: 4rem;
       margin-bottom: 4rem;
@@ -197,7 +201,7 @@
   <header class="hero d-flex align-items-center text-center text-white">
     <div class="container">
       <h1 class="mb-3">Your next <span class="handwrite">Amigo</span> is waiting</h1>
-      <p>Discover events near you. Make friends through friends of friends. Never go solo again.</p>
+      <p>Discover events and social gatherings near you. Make friends through friends of friends. Never go solo again.</p>
       <a href="#download" class="btn btn-lg btn-light mx-2">Coming Soon to the App Store</a>
       <a href="#download" class="btn btn-lg btn-blue mx-2">Comming Soon to Google Play</a>
     </div>
@@ -211,17 +215,18 @@
   <!-- Features Section -->
   <section id="features" class="container feature text-center">
     <div class="row">
-      <div class="col-md-4 reveal zoom">
+      <div class="col-md-4 reveal zoom py-2">
         <i class="bi bi-geo-alt icon"></i>
         <h3>Discover Nearby Events</h3>
-        <p>Uncover meetups, concerts, sports games, and more—all happening just around the corner.</p>
+        <p>Uncover meetups, concerts, sports games, and <br>
+			more—all happening just around the corner.</p>
       </div>
-      <div class="col-md-4 reveal zoom">
+      <div class="col-md-4 reveal zoom py-2">
         <i class="bi bi-people icon"></i>
         <h3>Connect with Friends of Friends</h3>
         <p>Leverage your social circle to make genuine connections. Your network, now social.</p>
       </div>
-      <div class="col-md-4 reveal zoom">
+      <div class="col-md-4 reveal zoom py-2">
         <i class="bi bi-heart icon"></i>
         <h3>Never Go Solo</h3>
         <p>Find an <em>Amigo</em> for every adventure. Always have company, always have fun.</p>
@@ -259,8 +264,8 @@
   <section id="download" class="text-center py-5 bg-white">
     <div class="container">
       <h2 class="reveal">Ready to find your <span class="text-orange">Amigo</span>?</h2>
-      <p class="reveal">Download now and start exploring!</p>
-      <a href="#" class="btn btn-orange btn-lg mx-2 reveal">Get the App</a>
+      <p class="reveal py-2">Download now and start exploring!</p>
+      <a href="#" class="btn btn-orange buttonOrange btn-lg mx-2 reveal py-2">Get the App</a>
     </div>
   </section>
   <!-- Footer -->
